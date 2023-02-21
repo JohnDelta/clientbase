@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "IYA+FyXlY2Jg81hoalOYFR+IQeMXBOI7PNCDG7nPIPqHMgcmCWQXO08nISEOcJmh3S23VluT4zySLGAsxL0kHw==",
+  "dgSpecHash": "+hFpjFK+6OA1yPmdg2SGQFvREyoAubEQAaxEH4e+2fCS7fJWJDcqYt4kxcWujmdYy/NVcKLBMXBLxbZ0rd3+yA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\john\\source\\repos\\clientbaseAPI\\clientbaseAPI\\clientbaseAPI.csproj",
+  "projectFilePath": "C:\\Users\\john\\Documents\\Projects\\clientbase\\clientbaseAPI\\clientbaseAPI\\clientbaseAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\john\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\john\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\john\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\john\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\john\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\john\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\john\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\john\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

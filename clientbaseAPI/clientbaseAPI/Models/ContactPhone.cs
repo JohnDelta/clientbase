@@ -6,20 +6,29 @@ namespace clientbaseAPI.Models
     [Table("ContactPhones")]
     public class ContactPhone
     {
-        [Key]
+        [Key] 
         public int ContactPhoneId { get; set; }
 
-        [Required]
+        [Required] 
         public PhoneType PhoneType { get; set; }
 
-        [Required]
+        [Required] 
+        [MaxLength(48)] 
+        public string PhoneNumber { get;set; }
+
+        [Required] 
         public int UserId { get; set; }
 
         public User? User { get; set; }
 
-        public ContactPhone(PhoneType phoneType, int userId)
+        public ContactPhone(PhoneType phoneType, string phoneNumber)
         {
             PhoneType = phoneType;
+            PhoneNumber = phoneNumber;
+        }
+
+        public ContactPhone(PhoneType phoneType, string phoneNumber, int userId) : this(phoneType: phoneType, phoneNumber: phoneNumber)
+        {
             UserId = userId;
         }
     }

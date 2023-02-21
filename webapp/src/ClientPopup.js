@@ -98,13 +98,13 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag}) => {
                         <div className='col-6'>
                             <label htmlFor="newNameInput" className="form-label" title='required field'>Name*</label>
                             <input type="text" className="form-control" id="newNameInput" aria-describedby="newNameHelp" 
-                                maxLength={24} minLength={3} required defaultValue={client !== null ? client.name : ''} />
+                                maxLength={48} minLength={3} required defaultValue={client !== null ? client.name : ''} />
                             <div className='invalid-feedback'>This field is required and accepts names between 3 to 24 characters</div>
                         </div>
                         <div className='col-6'>
                             <label htmlFor="newSurnameInput" className="form-label" title='required field'>Surname*</label>
                             <input type="text" className="form-control" id="newSurnameInput" aria-describedby="newSurnameHelp" 
-                                maxLength={24} minLength={3} required defaultValue={client !== null ? client.surname : ''} />
+                                maxLength={48} minLength={3} required defaultValue={client !== null ? client.surname : ''} />
                             <div className='invalid-feedback'>This field is required and accepts surnames between 3 and 24 characters</div>
                         </div>
                     </div>
@@ -156,13 +156,13 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag}) => {
                                     <div className='row mt-2'>
                                         <label htmlFor="newAddressLineInput" className="form-label ps-0" title='required field'>Address Line</label>
                                         <input type="text" className="form-control" id="newAddressLineInput" aria-describedby="newAddressLineHelp" 
-                                            maxLength={24} minLength={3} defaultValue={client !== null ? client.addressLine : ''} />
+                                            maxLength={48} minLength={3} defaultValue={client !== null ? client.addressLine : ''} />
                                         <div className='invalid-feedback'>This field accepts Address Lines between 3 and 24 characters</div>
                                     </div>
                                     <div className='row mt-2'>
                                         <label htmlFor="newCityInput" className="form-label ps-0" title='required field'>City*</label>
                                         <input type="text" className="form-control" id="newCityInput" aria-describedby="newCityHelp" 
-                                            maxLength={24} minLength={3} required defaultValue={client !== null ? client.city : ''} />
+                                            maxLength={48} minLength={3} required defaultValue={client !== null ? client.city : ''} />
                                         <div className='invalid-feedback'>This field is required and accepts cities between 3 and 24 characters</div>
                                     </div>
                                 </div>
