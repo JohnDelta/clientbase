@@ -1,7 +1,9 @@
 ﻿using clientbaseAPI.Context;
 using clientbaseAPI.DTOs.Responses;
 using clientbaseAPI.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace clientbaseAPI.Services.UserServices
 {
@@ -48,13 +50,6 @@ namespace clientbaseAPI.Services.UserServices
                 .ToList();
         }
 
-        public User Remove(User user)
-        {
-            _context.Users.Remove(user);
-            _context.SaveChanges();
-            return user;
-        }
-
         public User Update(User user)
         {
             string newMobilePhoneNumber = user.ContactPhones.Where(phone => phone.PhoneType == PhoneType.Mobile).First().PhoneNumber;
@@ -87,6 +82,41 @@ namespace clientbaseAPI.Services.UserServices
             _context.Users.Update(dbUser);
             _context.SaveChanges();
             return dbUser;
+        }
+
+        public User Remove(User user)
+        {
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            return user;
+        }
+
+        public void Remove(List<int> userIds)
+        {
+            using (SqlConnection conn = new SqlConnection(_context.Database.GetConnectionString()))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand("[dbo].[remove_users]", conn))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var dt = new DataTable();
+                    dt.Columns.Add("ID", typeof(int));
+
+                    foreach (var id in userIds)
+                    {
+                        dt.Rows.Add(id);
+                    }
+
+                    var parameter = command.Parameters.AddWithValue("user_ids", dt);
+                    parameter.SqlDbType = SqlDbType.Structured;
+                    
+                    var reader = command.ExecuteReader();
+                }
+                conn.Close();
+                conn.Dispose();
+            }
+
         }
     }
 }

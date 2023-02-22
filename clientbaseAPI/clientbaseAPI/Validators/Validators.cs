@@ -31,11 +31,11 @@ namespace clientbaseAPI.Validators
         public UserUpdateRequestValidator()
         {
             RuleFor(u => u.UserId).NotNull().NotEmpty();
-            RuleFor(u => u.Name).Length(3, 48);
-            RuleFor(u => u.Surname).Length(3, 48);
-            RuleFor(u => u.Email).EmailAddress().Length(7, 48);
-            RuleFor(u => u.Country).Length(3, 48);
-            RuleFor(u => u.City).Length(3, 48);
+            RuleFor(u => u.Name).Length(3, 48).When(u => u.Name != null && u.Name.Equals("")).WithMessage("Name cannot be empty.");
+            RuleFor(u => u.Surname).Length(3, 48).When(u => u.Name != null && u.Name.Equals("")).WithMessage("Surname cannot be empty."); ;
+            RuleFor(u => u.Email).EmailAddress().Length(7, 48).When(u => u.Name != null && u.Name.Equals("")).WithMessage("Email cannot be empty."); ;
+            RuleFor(u => u.Country).Length(3, 48).When(u => u.Name != null && u.Name.Equals("")).WithMessage("Country cannot be empty."); ;
+            RuleFor(u => u.City).Length(3, 48).When(u => u.Name != null && u.Name.Equals("")).WithMessage("City cannot be empty."); ;
             RuleFor(u => u.AddressLine).Length(3, 48);
             RuleFor(u => u.MobilePhoneNumber).Length(3, 48)
                 .When(u => u.HomePhoneNumber.IsNullOrEmpty() && u.WorkPhoneNumber.IsNullOrEmpty())

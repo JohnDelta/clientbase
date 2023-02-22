@@ -10,5 +10,6 @@ namespace clientbaseAPI.Services.UserServices
         public User Create(User user);
         public User Update(User user);
         public User Remove(User user);
+        public void Remove(List<int> userIds);
     }
 }

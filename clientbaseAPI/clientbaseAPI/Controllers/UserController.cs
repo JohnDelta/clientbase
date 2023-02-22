@@ -85,5 +85,13 @@ namespace clientbaseAPI.Controllers
             return Ok(userResponse);
         }
 
+        [Route("remove/ids")]
+        [HttpDelete]
+        public ActionResult Remove([FromBody] List<int> userIds)
+        {
+            _userService.Remove(userIds: userIds);
+            return Ok("");
+        }
+
     }
 }
