@@ -273,3 +273,5 @@ The general rules are:
 
 ![p8](https://user-images.githubusercontent.com/53333356/220604208-12588303-ef64-47ec-a7c3-67684f73f7e6.jpg)
 
+![p9](https://user-images.githubusercontent.com/53333356/220605250-c5be865b-a4f6-4b11-bda4-0829efe7d139.jpg)
+
