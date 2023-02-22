@@ -5,6 +5,7 @@ import { Countries, API_ENDPOINTS } from "./Static";
 const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
 
     const [isUpdateForm, SetUpdateForm] = useState(client !== null);
+    const [noChanges, SetNoChanges] = useState(false);
     const [name, SetName] = useState('');
     const [surname, SetSurname] = useState('');
     const [email, SetEmail] = useState('');
@@ -165,11 +166,14 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
     }
 
     const SubmitForm = () => {
+        SetNoChanges(false);
         if (!IsFormValid()) return;
         if (!isUpdateForm) {
             AddClient();
         } else if (HaveValuesChanged()) {
             UpdateClient();
+        } else {
+            SetNoChanges(true);
         }
     }
     
@@ -184,6 +188,11 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
                     </button>
                 </div>
                 <hr />
+                {noChanges 
+                ?<div className="alert alert-dark" role="alert">
+                    No changes found. Operation not completed.
+                </div>
+                : ''}
                 <form id='newClientForm' noValidate>
                     <div className='row'>
                         <div className='col-6'>
