@@ -1,5 +1,6 @@
 ﻿using clientbaseAPI.Context;
 using clientbaseAPI.DTOs.Responses;
+using clientbaseAPI.Exceptions;
 using clientbaseAPI.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -96,6 +97,34 @@ namespace clientbaseAPI.Services.UserServices
             using (SqlConnection conn = new SqlConnection(_context.Database.GetConnectionString()))
             {
                 conn.Open();
+
+                using (SqlCommand command = new SqlCommand("[dbo].[users_exist]", conn))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var dt = new DataTable();
+                    dt.Columns.Add("ID", typeof(int));
+
+                    foreach (var id in userIds)
+                    {
+                        dt.Rows.Add(id);
+                    }
+
+                    var parameter = command.Parameters.AddWithValue("user_ids", dt);
+                    parameter.SqlDbType = SqlDbType.Structured;
+
+                    var reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        var Id = int.Parse(reader["FETCH_CODE"].ToString()!);
+                        if (Id == 1)
+                        {
+                            throw APIExceptions.UsersNotFound;
+                        }
+                    }
+                    reader.Close();
+                }
+
                 using (SqlCommand command = new SqlCommand("[dbo].[remove_users]", conn))
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
@@ -110,9 +139,11 @@ namespace clientbaseAPI.Services.UserServices
 
                     var parameter = command.Parameters.AddWithValue("user_ids", dt);
                     parameter.SqlDbType = SqlDbType.Structured;
-                    
+
                     var reader = command.ExecuteReader();
+                    reader.Close();
                 }
+
                 conn.Close();
                 conn.Dispose();
             }
