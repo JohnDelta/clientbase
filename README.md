@@ -254,3 +254,24 @@ The general rules are:
     - Go to clientbase/webapp/Static.js and change the API_BASE with your local api host. Default is `https://localhost:7017/api/`
     - Go to clientbase/webapp and install the node modules with `npm install`
     - Then, run the webapp `npm start`
+
+## Images from testing
+
+![p1](https://user-images.githubusercontent.com/53333356/220604086-a414222f-a423-4706-9ea8-8a7555468330.jpg)
+
+![p2](https://user-images.githubusercontent.com/53333356/220604124-28cd0e60-1358-425b-9d9c-0198e11e2833.jpg)
+
+![p3](https://user-images.githubusercontent.com/53333356/220604146-3bd52d26-9a93-49a0-991a-57b043dcb635.jpg)
+
+![p4](https://user-images.githubusercontent.com/53333356/220604156-0bb629de-c5d9-4285-910c-ece9350dc63d.jpg)
+
+![p5](https://user-images.githubusercontent.com/53333356/220604163-7518e1a2-bcab-4836-a098-9b67828bdde8.jpg)
+
+![p6](https://user-images.githubusercontent.com/53333356/220604173-a39e72b0-8f3f-4f92-81d1-841b34742d6c.jpg)
+
+![p7](https://user-images.githubusercontent.com/53333356/220604195-2d8e091c-bf7e-4c74-905f-b50af0178289.jpg)
+
+![p8](https://user-images.githubusercontent.com/53333356/220604208-12588303-ef64-47ec-a7c3-67684f73f7e6.jpg)
+
+![p9](https://user-images.githubusercontent.com/53333356/220605250-c5be865b-a4f6-4b11-bda4-0829efe7d139.jpg)
+
