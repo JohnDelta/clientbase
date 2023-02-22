@@ -199,13 +199,13 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
                             <label htmlFor="newNameInput" className="form-label" title='required field'>Name*</label>
                             <input type="text" className="form-control" id="newNameInput" aria-describedby="newNameHelp" 
                                 maxLength={48} minLength={3} required value={name} onChange={(e) => {SetName(e.target.value)}} />
-                            <div className='invalid-feedback'>This field is required and accepts names between 3 to 24 characters</div>
+                            <div className='invalid-feedback'>This field is required and accepts names between 3 to 48 characters</div>
                         </div>
                         <div className='col-6'>
                             <label htmlFor="newSurnameInput" className="form-label" title='required field'>Surname*</label>
                             <input type="text" className="form-control" id="newSurnameInput" aria-describedby="newSurnameHelp" 
                                 maxLength={48} minLength={3} required value={surname} onChange={(e) => {SetSurname(e.target.value)}} />
-                            <div className='invalid-feedback'>This field is required and accepts surnames between 3 and 24 characters</div>
+                            <div className='invalid-feedback'>This field is required and accepts surnames between 3 and 48 characters</div>
                         </div>
                     </div>
                     <div className='row mt-4'>
@@ -213,7 +213,7 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
                             <label htmlFor="newEmailInput" className="form-label" title='required field'>Email*</label>
                             <input type="email" className="form-control" id="newEmailInput" aria-describedby="newEmailHelp" 
                                 required maxLength={48} minLength={7} value={email} onChange={(e) => {SetEmail(e.target.value)}} />
-                            <div className='invalid-feedback'>This field is required and accepts emails</div>
+                            <div className='invalid-feedback'>This field is required and accepts emails between 3 and 48 characters</div>
                         </div>
                     </div>
                     <div className='row mt-4'>
@@ -235,7 +235,7 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
                                         <label htmlFor="newHomePhoneNumberInput" className="form-label ps-0" title='required field'>Home</label>
                                         <input type="text" className="form-control" id="newHomePhoneNumberInput" aria-describedby="newHomePhoneNumberHelp" maxLength={48} minLength={3}
                                             onChange={(e) => { SetHomePhoneNumber(e.target.value); GetPhoneNumberValidation(); }} value={homePhoneNumber} />
-                                        <div className='invalid-feedback'>Atleast one of the contact numbers is required.</div>
+                                        <div className='invalid-feedback'>Atleast one of the contact numbers is required. The numbers can be between 4 and 48 characters.</div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -257,13 +257,13 @@ const ClientPopup = ({client, toggleFlag, SetToggleFlag, SetClients}) => {
                                         <label htmlFor="newAddressLineInput" className="form-label ps-0" title='required field'>Address Line*</label>
                                         <input type="text" className="form-control" id="newAddressLineInput" aria-describedby="newAddressLineHelp" 
                                             maxLength={48} minLength={3} required value={addressLine} onChange={(e) => {SetAddressLine(e.target.value)}} />
-                                        <div className='invalid-feedback'>This field accepts Address Lines between 3 and 24 characters</div>
+                                        <div className='invalid-feedback'>This field accepts Address Lines between 3 and 48 characters</div>
                                     </div>
                                     <div className='row mt-2'>
                                         <label htmlFor="newCityInput" className="form-label ps-0" title='required field'>City*</label>
                                         <input type="text" className="form-control" id="newCityInput" aria-describedby="newCityHelp" 
                                             maxLength={48} minLength={3} required value={city} onChange={(e) => {SetCity(e.target.value)}} />
-                                        <div className='invalid-feedback'>This field is required and accepts cities between 3 and 24 characters</div>
+                                        <div className='invalid-feedback'>This field is required and accepts cities between 3 and 48 characters</div>
                                     </div>
                                 </div>
                             </fieldset>
