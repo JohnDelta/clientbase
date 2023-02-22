@@ -5,29 +5,29 @@
 A simple webapp that manages a client base with crud functionality.
 The clients have the following fields:
 
-    - Name
-    - Surname
-    - Email
-    - Country
-    - City
-    - Address Line
-    - Home phone number
-    - Work phone number
-    - Mobile phone number
+- Name
+- Surname
+- Email
+- Country
+- City
+- Address Line
+- Home phone number
+- Work phone number
+- Mobile phone number
 
 
 The webapp has the following functions:
 
-    - Add client
-    - Remove (1 or multiple) client(s)
-    - Update client
-    - Display all clients in a table
+- Add client
+- Remove (1 or multiple) client(s)
+- Update client
+- Display all clients in a table
 
 The application architecturaly is separated in three parts:
 
-    - The representantional layer which is written in React
-    - The data layer is a database which is hosted in an SQLServer
-    - The business logic layer is an API which is written as an asp .net core web api
+- The representantional layer which is written in React
+- The data layer is a database which is hosted in an SQLServer
+- The business logic layer is an API which is written as an asp .net core web api
 
 Attention was given on the field validation given from both
 the webapp and the api directly.
@@ -240,17 +240,17 @@ The general rules are:
 
 ## Installation in a local testing environment
 
-    - Have the stack mentioned above installed
-    - Clone the project `git clone https://github.com/JohnDelta/clientbase.git`
-    - Database
-        - Create a database with name `clientbase`
-        - Run the clientbase/clientbaseAPI/clientbaseAPI/SQLScripts/remove_users.sql to save the stored procedure
-        - Change the clientbase/clientbaseAPI/clientbaseAPI/appsettings.json ConnectionStrings.DefaultConnection string with the name of your local sql server
-        - Note: In the appsettings.json the TrustServerCertificate is set to True so it needs to be removed for non-developing evnironments and install a proper certificate. [see](https://stackoverflow.com/a/17658821)
-    - API
-        - Change the clientbase/clientbaseAPI/clientbaseAPI/appsettings.json WebappHost with your local webapp host. The default is `http://localhost:3000`
-        - Go to clientbase/clientbaseAPI/clientbaseAPI/ and update the database with `dotnet ef database update`
-    - Webapp
-        - Go to clientbase/webapp/Static.js and change the API_BASE with your local api host. Default is `https://localhost:7017/api/`
-        - Go to clientbase/webapp and install the node modules with `npm install`
-        - Then, run the webapp `npm start`
+- Have the stack mentioned above installed
+- Clone the project `git clone https://github.com/JohnDelta/clientbase.git`
+- Database
+    - Create a database with name `clientbase`
+    - Run the clientbase/clientbaseAPI/clientbaseAPI/SQLScripts/remove_users.sql to save the stored procedure
+    - Change the clientbase/clientbaseAPI/clientbaseAPI/appsettings.json ConnectionStrings.DefaultConnection string with the name of your local sql server
+    - Note: In the appsettings.json the TrustServerCertificate is set to True so it needs to be removed for non-developing evnironments and install a proper certificate. [see](https://stackoverflow.com/a/17658821)
+- API
+    - Change the clientbase/clientbaseAPI/clientbaseAPI/appsettings.json WebappHost with your local webapp host. The default is `http://localhost:3000`
+    - Go to clientbase/clientbaseAPI/clientbaseAPI/ and update the database with `dotnet ef database update`
+- Webapp
+    - Go to clientbase/webapp/Static.js and change the API_BASE with your local api host. Default is `https://localhost:7017/api/`
+    - Go to clientbase/webapp and install the node modules with `npm install`
+    - Then, run the webapp `npm start`
